@@ -26,13 +26,58 @@ const bikes = [
 ]
 
 let lowest = 100;
+let lowestName;
 
 bikes.forEach((elem) =>{
-    let { weight_kg } = elem;
+    let { name, weight_kg } = elem;
     weight_kg = parseFloat(weight_kg);
     if(weight_kg < lowest){
         lowest = weight_kg;
+        lowestName = name;
     }
 })
 
-console.log(lowest);
+console.log(`The lightest bike is ${lowestName}, weighing ${lowest} kg.`);
+
+const squads = [
+    {
+        name: 'Napoli',
+        foulsTaken: 0,
+        goals: 0,
+    },
+    {
+        name: 'Roma',
+        foulsTaken: 0,
+        goals: 0,
+    },
+    {
+        name: 'Juventus',
+        foulsTaken: 0,
+        goals: 0,
+    },
+    {
+        name: 'Inter',
+        foulsTaken: 0,
+        goals: 0,
+    },
+    {
+        name: 'Milan',
+        foulsTaken: 0,
+        goals: 0,
+    },
+]
+
+squads.forEach((elem) =>{
+    elem.foulsTaken = Math.floor(Math.random()*11);
+    elem.goals = Math.floor(Math.random()*11);
+})
+
+console.log(squads);
+
+let squads2 = [];
+squads.map((elem) =>{
+    let {goals, ...rest} = elem;
+    squads2.push(rest);
+})
+
+console.log(squads2);
