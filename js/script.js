@@ -37,7 +37,7 @@ bikes.forEach((elem) =>{
     }
 })
 
-console.log(`The lightest bike is ${lowestName}, weighing ${lowest} kg.`);
+document.getElementById('bikes-result').innerText = `The lightest bike is ${lowestName}, weighing ${lowest} kg.`;
 
 const squads = [
     {
@@ -78,6 +78,8 @@ let squads2 = [];
 squads.map((elem) =>{
     let {goals, ...rest} = elem;
     squads2.push(rest);
+
+    document.getElementById('squads-result').innerHTML += `<li>Squadra: ${rest.name}, Falli Subiti: ${rest.foulsTaken}</li>`;
 })
 
 console.log(squads2);
@@ -111,6 +113,8 @@ fashion.map((elem) => {
     let article = elem;
     article['position'] = String.fromCharCode(Math.random()*26+97);
     fashion2.push(article);
+
+    document.getElementById('squads-result').innerHTML += `<li>Nome: ${article.name}, Tipo: ${article.type}, Posizione: ${article.position}, Colore: ${article.color}</li>`;
 })
 
 console.log(fashion2);
