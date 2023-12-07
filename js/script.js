@@ -81,3 +81,36 @@ squads.map((elem) =>{
 })
 
 console.log(squads2);
+
+let fashion = [
+    {
+        name: 'Poppy',
+        type: 'tshirt',
+        color: 'red'
+    },
+    {
+        name: 'Jumping',
+        type: 'glasses',
+        color: 'blue'
+    },
+    {
+        name: 'CrissCross',
+        type: 'shoes',
+        color: 'black'
+    },
+    {
+        name: 'Jenny',
+        type: 'bag',
+        color: 'pink'
+    }
+]
+
+let fashion2 = [];
+
+fashion.map((elem) => {
+    let article = elem;
+    article['position'] = String.fromCharCode(Math.random()*26+97);
+    fashion2.push(article);
+})
+
+console.log(fashion2);
